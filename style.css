@@ -15,6 +15,7 @@ body {
     padding: 4% 3%;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 50px 10px;
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
     justify-content: space-around;
 }
 .content_container {
@@ -77,8 +78,9 @@ body {
 .display {
     display:flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     margin: 15% 0% 0% 20%;
+    padding-bottom: 5%;
 }
 .display * {
     margin: 15px 0px;
@@ -87,6 +89,8 @@ body {
     font-size: 4vw;
 }
 .display p {
+    margin: 0px;
+    color: rgb(107, 107, 107);
     transition:  all .2s;
 }
 .display p:hover {
@@ -99,6 +103,7 @@ body {
 .display_child_content {
     display: flex;
     flex-direction: column;
+    margin: 0px;
 }
 .num_plate {
     display:flex;
@@ -107,12 +112,13 @@ body {
 }
 .num_plate h2 {
     margin: 0px;
-    color: gray;
+    color: rgb(0, 0, 0);
     cursor: pointer;
-    font-size: 2.5vw;
-    transition: all .2s;
+    font-size: 2vw;
 }
 .num_plate h2:hover {
+    position: relative;
+    top: -2%;
     color: black;
 }
 .num_plate hr {
@@ -133,13 +139,21 @@ body {
     margin: 0px 10px 0px 0px;
     object-fit: fill;
 }
+.sns_container img:hover {
+    transform: scale(1.1,1.1);
+    transform-origin: 50% 0%;
+}
 .input_container {
     display:flex;
-    margin: 10% 15%;
+    margin: 15% 15%;
     padding: 5%;
     background-color: rgba(255, 30, 0, 0.3);
     border-radius:10px;
-    box-shadow: 0px 5px 35px 15px rgba(255, 30, 0, 0.2);
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    transition: all 0.5s;
+}
+.input_container:hover {
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.25) 0px -10px 20px;
 }
 .input_area {
     display: flex;
@@ -147,13 +161,17 @@ body {
 }
 .input_area p{
     margin: 5px 0px 20px 0px;
+    color: rgb(107, 107, 107);
+    display: inline;
 }
-.input_area h3 {
+.input_area h2 {
     margin:10px 0px 0px 0px;
 }
 .input_field {
     display: flex;
     flex-direction: column;
+    align-items:flex-end;
+    margin-top: 20px
 }
 .input_field > input {
     border: none;
@@ -167,7 +185,8 @@ body {
 }
 .input_field a {
     font-size:.9em;
-    text-align: right;
+    display: inline-block;
+    width: 118px;
     text-decoration: none;
 }
 .input_field a:hover {
@@ -181,14 +200,15 @@ body {
     width: 100%;
     margin: 50px 0px 0px 0px;
     padding: 15px;
-    font-size: 20px;
-    border-radius: 0px 10px;
+    border-radius: 30px 30px;
     cursor: pointer;
-    transition:  all .6s
+    font-size: 20px;
+    transition:  all .1ms;
 }
 .input_area button:hover {
-    border-radius: 10px 0px;
     border: 1px solid black;
     background-color: rgba(255, 6, 6, 0.4);
-    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
+    box-shadow:rgba(0,0,0,0.4) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    padding:12.2px 15px;
+    font-size: 25px;
 }
