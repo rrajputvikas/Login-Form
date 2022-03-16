@@ -1,19 +1,47 @@
+:root {
+    --main-cont-color: rgba(255, 255, 255, 0.8);
+    --login-cont-color: rgba(255, 30, 0, 0.4);
+}
 html {
     width: 100%;
     height: 100%;
     font-family: 'Montserrat', sans-serif;
-    background: url("bg.webp") no-repeat center fixed;
+    background: url("bg.webp") no-repeat center center fixed;
     background-size: cover;
 }
 body {
     margin:0%;
     padding:0%;
 }
+.cover_light_theme{
+    position: fixed;
+    transition: all 0.7s;
+    width:100%;
+    height:100%;
+}
+.cover_dark_theme{
+    position: fixed;
+    transition: all 0.5s;
+    width:100%;
+    height:100%;
+    background: rgba(0, 0, 0, 0.5);
+}
 .main_container {
     display: flex;
+    transition: all 0.7s;
     margin: 5% 15%;
     padding: 4% 3%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--main-cont-color);
+    border-radius: 50px 10px;
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    justify-content: space-around;
+}
+.dark_main_container {
+    display: flex;
+    transition: all 0.5s;
+    margin: 5% 15%;
+    padding: 4% 3%;
+    background-color: rgba(40,40,40, 0.8);
     border-radius: 50px 10px;
     box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
     justify-content: space-around;
@@ -27,12 +55,20 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-.logo_container > img {
-    width: 200px;
-    height: 60px;
+.logo_container  img {
+    width: 250px;
+    height: 80px;
     object-fit: cover;
-    padding-left: 5%;
-    padding-top: 1%;
+}
+.logo_container_dark img#lite {
+    visibility: hidden;
+}
+.logo_container img#dark {
+    visibility: hidden;
+}
+.logo_container_dark img#dark {
+    visibility: visible;
+    position: absolute;
 }
 .bottom_container {
     display: flex;
@@ -43,13 +79,27 @@ body {
 .bottom_container {
     margin: 0px 10px 0px 0px;
 }
+.bottom_container_dark p{
+    visibility: hidden;
+    display: block;
+    position: relative;
+}
+.bottom_container_dark p::after {
+    color: white;
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    content: "~Dark Mode";
+    width: 83px;
+}
 .toggle {
     position : relative ;
-    display : inline-block;
     width : 35px;
     height : 20px;
     background-color: rgb(255, 255, 255);
+    border: 1px solid black;
     border-radius: 30px;
+    transition: background .7s; 
 }
 .toggle:after {
     content: '';
@@ -57,13 +107,13 @@ body {
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background-color: rgb(117, 117, 117);
+    background-color: rgb(146, 146, 146);
     top: .9px; 
     left: 1px;
     transition:  all .5s;
 }
 .checkbox:checked + .toggle::after {
-    left : 15px;
+    left : 16px;
 }
 .checkbox:checked + .toggle {
     background-color: rgb(63, 63, 63);
@@ -81,6 +131,24 @@ body {
     justify-content: flex-start;
     margin: 15% 0% 0% 20%;
     padding-bottom: 5%;
+}
+.display_dark h1,
+.display_dark >.display_child >.display_child_content h2,
+.input_container_dark >.input_area h2 {
+    color: rgb(192, 189, 189);
+}
+.display_dark >.display_child p,
+.input_container_dark >.input_area p,
+.input_container_dark >.input_area >.input_field input::placeholder,
+.input_container_dark >.input_area >.input_field *{
+    color: rgb(180, 162, 101);
+}
+.input_container_dark >.input_area >.input_field > input {
+    border-bottom: 2px solid rgb(0, 146, 122);
+}
+.display_dark >.display_child >.display_child_content >.num_plate hr {
+    background-color:rgb(161, 189, 105);
+    border: 1px solid red;
 }
 .display * {
     margin: 15px 0px;
@@ -124,7 +192,7 @@ body {
 .num_plate hr {
     margin: 0px;
     background-color: red;
-    border: 1px solid red;
+    border: 1px solid plum;
     border-radius: 100%;
     height:1%;
 }
@@ -145,9 +213,10 @@ body {
 }
 .input_container {
     display:flex;
+    flex-direction: column;
     margin: 15% 15%;
     padding: 5%;
-    background-color: rgba(255, 30, 0, 0.3);
+    background-color: var(--login-cont-color);
     border-radius:10px;
     box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
     transition: all 0.5s;
@@ -158,10 +227,11 @@ body {
 .input_area {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 .input_area p{
     margin: 5px 0px 20px 0px;
-    color: rgb(107, 107, 107);
+    color: rgb(104, 104, 104);
     display: inline;
 }
 .input_area h2 {
@@ -182,14 +252,31 @@ body {
     font-size: 20px;
     font-style: italic;
     height: 30px;
+    outline: none;
 }
-.input_field a {
-    font-size:.9em;
+.utility_container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(104, 104, 104);
+}
+input#rememberMe {
+    float:left;
+    margin: 0;
+}
+.utility_container label {
+    font-size: 0.75rem;
+    float: left;
+}
+.utility_container a {
+    font-size: 0.75em;
     display: inline-block;
-    width: 118px;
+    width: 100px;
     text-decoration: none;
+    color: rgb(104, 104, 104);
 }
-.input_field a:hover {
+.utility_container a:hover {
     text-decoration: underline;
     color: red;
 }
@@ -204,6 +291,10 @@ body {
     cursor: pointer;
     font-size: 20px;
     transition:  all .1ms;
+}
+.input_container >.input_area button:hover {
+    box-shadow:rgba(94, 26, 26,.5) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.25) 0px -10px 20px;
 }
 .input_area button:hover {
     border: 1px solid black;

@@ -8,58 +8,68 @@
     <title>Login to Metaverse</title>
 </head>
 <body>
-    <div>
-        <div class="main_container">
-            <div class="content_container">               
-                
-                <div class="logo_container">
-                    <img src="logo.png" alt="TECH-LIFE IS JOY">
-                    <div class="bottom_container">
-                        <p>LITE</p>
-                        <input type="checkbox" id="switch" class="checkbox">
-                        <label for="switch" class="toggle"></label>
-                    </div>
-                </div>
-                
-                <div class="login_container">
-                    <div class="display">
-                        <h1>Welcome to Metaverse</h1>
-                        <div class="display_child">
-                            <div class="display_child_content">
-                                <p>In the metaverse, users traverse a virtual world that mimics aspects of the physical world.</p>
-                                <div class="num_plate">
-                                    <h2>+91 9999999999<hr></h2>
-                                    <h2>+91 9999988888<hr></h2>
-                                </div>
-                                <div class="sns_container">
-                                    <img src="fb.png" alt="Facebook">
-                                    <img src="twitter.png" alt="Twitter">
-                                    <img src="insta.png" alt="Instagram">
-                                </div>
-                            </div>
-                            <div></div>
-                        </div>
-                    </div>
-                    <div class="input_container">
-                        <div class="input_area">
-                            <div>
-                                <h2>Log in</h2>
-                                <p><em>This is a secure system and you need to provide your login details to access the site</em></p>
-                            </div>
-                            <div class="input_field">
-                                <input type="text" name="username" class="form-input" placeholder="Username">
-                                <input type="password" name="password" placeholder="Password">
-                                <a href="">Forgot Password?</a>
-                            </div>
-                            <div>
-                                <button>Login</button>
-                            </div>
+    <div id="cover" class="cover_light_theme">
+        <div>
+            <div id="main_container" class="main_container">
+                <div class="content_container">               
+                    
+                    <div id="logo_container" class="logo_container">
+                        <img id="lite" src="./logo.png" alt="TECH-LIFE IS JOY">
+                        <img id="dark" src="./logo-dark.png" alt="TECH-LIFE IS JOY">
+                        <div id="bottom_container" class="bottom_container">
+                            <input type="checkbox" id="switch" class="checkbox">
+                            <label for="switch" class="toggle"></label>
+                            <p>~Lite Mode</p>
                         </div>
                     </div>
                     
+                    <div class="login_container">
+                        <div id="display" class="display">
+                            <h1>Welcome to Metaverse</h1>
+                            <div class="display_child">
+                                <div class="display_child_content">
+                                    <p>In the metaverse, users traverse a virtual world that mimics aspects of the physical world.</p>
+                                    <div class="num_plate">
+                                        <h2>+91 9999999999<hr></h2>
+                                        <h2>+91 9999988888<hr></h2>
+                                    </div>
+                                    <div class="sns_container">
+                                        <img src="fb.png" alt="Facebook">
+                                        <img src="twitter.png" alt="Twitter">
+                                        <img src="insta.png" alt="Instagram">
+                                    </div>
+                                </div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div id="input_container" class="input_container">
+                            <div class="input_area">
+                                <div>
+                                    <h2>Log in</h2>
+                                    <p><em>This is a secure system and you need to provide your login details to access the site</em></p>
+                                </div>
+                                <div class="input_field">
+                                    <input type="text" name="username" class="form-input" placeholder="Username">
+                                    <input type="password" name="password" placeholder="Password">
+                                    <div class="utility_container">
+                                        <div>
+                                            <input type="checkbox" name="" id="rememberMe" checked>
+                                            <label for="rememberMe">Remember me</label>
+                                        </div>
+                                        <a href="">Forgot Password?</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button>Login</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="./script.js"></script>
 </body>
 </html>
